@@ -47,7 +47,7 @@ architecture Behavioral of vga_display is
     constant STAFF_HEIGHT  : integer := 2;
     constant OFFSET : integer := NOTE_SPACING * 16;
 
-    -- Corrected note vertical position (based on staff lines and spaces)
+    -- Note vertical position
     function note_y_pos(sel : std_logic_vector(7 downto 0)) return unsigned is
     begin
         case sel is
