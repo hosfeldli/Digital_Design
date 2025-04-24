@@ -14,7 +14,6 @@ end Memory;
 
 architecture Behavioral of Memory is
 
-    -- Flattened memory: 256 characters * 8 lines = 2048 entries
     type rom_array_type is array (0 to 2047) of STD_LOGIC_VECTOR(7 downto 0);
 
     signal rom : rom_array_type := (
@@ -25,7 +24,7 @@ architecture Behavioral of Memory is
         523 => "00110011",
         524 => "00111111",
         525 => "00110011",
-        526 => "00110011",  -- fixed typo: was "00110033"
+        526 => "00110011",
         527 => "00000000",
 
         -- Character 66 ('B')
