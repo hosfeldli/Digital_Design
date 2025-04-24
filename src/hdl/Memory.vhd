@@ -101,7 +101,7 @@ architecture Behavioral of Memory is
         others => (others => '0')
     );
 
-    -- Vivado hint for BRAM must come AFTER signal declaration
+    -- Vivado hint for BRAM
     attribute ram_style : string;
     attribute ram_style of rom : signal is "block";
 
