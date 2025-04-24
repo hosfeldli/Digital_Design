@@ -2,11 +2,12 @@
 
 module Audio (
     input wire clk,           // 100 MHz system clock
-    input wire rst,           // Active high reset
+    input wire rst,
     input wire [7:0] note,    // MIDI note number
     output reg PWM            // PWM audio output
 );
 
+    // Variables for PWM generation
     reg [31:0] period_lut [0:127];
     reg [31:0] period = 0;
     reg [31:0] high_time = 0;
