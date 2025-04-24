@@ -2,12 +2,13 @@
 
 module MIDI_Top (
     input wire clk,           // 100 MHz system clock
-    input wire reset,         // Active-high reset
-    input wire uart_rx,       // MIDI serial input
-    output wire audio_pwm,     // Audio output (e.g. to PMOD)
-    output wire [7:0] midi_note
+    input wire reset,
+    input wire uart_rx,       // MIDI serial UART input
+    output wire audio_pwm,     // PWM audio output
+    output wire [7:0] midi_note // MIDI note number
 );
 
+    // Variables to keep track of note status (on or off)
     wire note_on;
     wire note_off;
     
@@ -25,7 +26,7 @@ module MIDI_Top (
         .midi_note(midi_note),
         .note_on(note_on),
         .note_off(note_off),
-        .debug_uart_byte(),     // optional
+        .debug_uart_byte(),
         .debug_uart_ready()
     );
 
