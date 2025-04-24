@@ -62,7 +62,7 @@ module MIDI_Interface #(
         end
     end
 
-    // MIDI Parser FSM with Clear on Note Off
+    // MIDI Parser
     reg [1:0] midi_state = 0;
     reg [7:0] status_byte;
 
